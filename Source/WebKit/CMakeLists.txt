@@ -339,7 +339,6 @@ set(WebKit_MESSAGES_IN_FILES
 )
 
 set(WebKit_FRAMEWORKS
-    JavaScriptCore
     PAL
     WTF
     WebCore

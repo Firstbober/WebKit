@@ -22,7 +22,6 @@ set(WebKitTestRunner_SOURCES
 set(WebKitTestRunner_LIBRARIES TestRunnerShared)
 
 set(WebKitTestRunner_FRAMEWORKS
-    JavaScriptCore
     PAL
     WTF
     WebCore

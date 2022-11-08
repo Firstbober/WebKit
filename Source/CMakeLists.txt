@@ -11,8 +11,6 @@ if (USE_CAPSTONE)
     add_subdirectory(ThirdParty/capstone)
 endif ()
 
-add_subdirectory(JavaScriptCore)
-
 if (ENABLE_WEBGL OR USE_ANGLE_EGL)
     add_subdirectory(ThirdParty/ANGLE)
 endif ()

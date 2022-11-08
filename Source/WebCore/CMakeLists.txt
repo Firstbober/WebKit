@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.12)
 
 include(WebKitCommon)
 include(target/TargetWTF)
-include(target/TargetJavaScriptCore)
 include(WebCoreMacros.cmake)
 include(Headers.cmake)
 
