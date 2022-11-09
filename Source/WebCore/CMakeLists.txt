@@ -18,28 +18,8 @@ set(WebCore_PRIVATE_INCLUDE_DIRECTORIES
     "${WebCore_DERIVED_SOURCES_DIR}"
     "${WEBCORE_DIR}"
     "${WEBCORE_DIR}/Modules/WebGPU"
-    "${WEBCORE_DIR}/Modules/airplay"
-    "${WEBCORE_DIR}/Modules/applepay"
-    "${WEBCORE_DIR}/Modules/applepay/paymentrequest"
-    "${WEBCORE_DIR}/Modules/applicationmanifest"
-    "${WEBCORE_DIR}/Modules/async-clipboard"
-    "${WEBCORE_DIR}/Modules/beacon"
-    "${WEBCORE_DIR}/Modules/cache"
-    "${WEBCORE_DIR}/Modules/compression"
-    "${WEBCORE_DIR}/Modules/contact-picker"
-    "${WEBCORE_DIR}/Modules/cookie-consent"
-    "${WEBCORE_DIR}/Modules/credentialmanagement"
     "${WEBCORE_DIR}/Modules/encryptedmedia"
     "${WEBCORE_DIR}/Modules/encryptedmedia/legacy"
-    "${WEBCORE_DIR}/Modules/entriesapi"
-    "${WEBCORE_DIR}/Modules/fetch"
-    "${WEBCORE_DIR}/Modules/filesystemaccess"
-    "${WEBCORE_DIR}/Modules/geolocation"
-    "${WEBCORE_DIR}/Modules/highlight"
-    "${WEBCORE_DIR}/Modules/indexeddb"
-    "${WEBCORE_DIR}/Modules/indexeddb/client"
-    "${WEBCORE_DIR}/Modules/indexeddb/server"
-    "${WEBCORE_DIR}/Modules/indexeddb/shared"
     "${WEBCORE_DIR}/Modules/mediacapabilities"
     "${WEBCORE_DIR}/Modules/mediacontrols"
     "${WEBCORE_DIR}/Modules/mediarecorder"
@@ -48,38 +28,16 @@ set(WebCore_PRIVATE_INCLUDE_DIRECTORIES
     "${WEBCORE_DIR}/Modules/mediastream"
     "${WEBCORE_DIR}/Modules/mediastream/libwebrtc"
     "${WEBCORE_DIR}/Modules/model-element"
-    "${WEBCORE_DIR}/Modules/model-element/dummy"
-    "${WEBCORE_DIR}/Modules/navigatorcontentutils"
-    "${WEBCORE_DIR}/Modules/notifications"
-    "${WEBCORE_DIR}/Modules/paymentrequest"
-    "${WEBCORE_DIR}/Modules/permissions"
-    "${WEBCORE_DIR}/Modules/pictureinpicture"
-    "${WEBCORE_DIR}/Modules/plugins"
-    "${WEBCORE_DIR}/Modules/push-api"
-    "${WEBCORE_DIR}/Modules/remoteplayback"
-    "${WEBCORE_DIR}/Modules/reporting"
-    "${WEBCORE_DIR}/Modules/screen-wake-lock"
-    "${WEBCORE_DIR}/Modules/speech"
     "${WEBCORE_DIR}/Modules/storage"
     "${WEBCORE_DIR}/Modules/streams"
     "${WEBCORE_DIR}/Modules/web-locks"
     "${WEBCORE_DIR}/Modules/webaudio"
-    "${WEBCORE_DIR}/Modules/webauthn"
-    "${WEBCORE_DIR}/Modules/webauthn/cbor"
-    "${WEBCORE_DIR}/Modules/webauthn/fido"
     "${WEBCORE_DIR}/Modules/webcodecs"
-    "${WEBCORE_DIR}/Modules/webdatabase"
-    "${WEBCORE_DIR}/Modules/webdriver"
-    "${WEBCORE_DIR}/Modules/websockets"
-    "${WEBCORE_DIR}/Modules/webxr"
     "${WEBCORE_DIR}/accessibility"
     "${WEBCORE_DIR}/accessibility/isolatedtree"
     "${WEBCORE_DIR}/animation"
-    "${WEBCORE_DIR}/bindings"
-    "${WEBCORE_DIR}/bindings/js"
     "${WEBCORE_DIR}/bridge"
     "${WEBCORE_DIR}/bridge/c"
-    "${WEBCORE_DIR}/bridge/jsc"
     "${WEBCORE_DIR}/contentextensions"
     "${WEBCORE_DIR}/crypto"
     "${WEBCORE_DIR}/crypto/algorithms"
@@ -93,13 +51,11 @@ set(WebCore_PRIVATE_INCLUDE_DIRECTORIES
     "${WEBCORE_DIR}/css/typedom/color"
     "${WEBCORE_DIR}/css/typedom/numeric"
     "${WEBCORE_DIR}/css/typedom/transform"
-    "${WEBCORE_DIR}/cssjit"
     "${WEBCORE_DIR}/display"
     "${WEBCORE_DIR}/display/compositing"
     "${WEBCORE_DIR}/display/css"
     "${WEBCORE_DIR}/dom"
     "${WEBCORE_DIR}/dom/messageports"
-    "${WEBCORE_DIR}/domjit"
     "${WEBCORE_DIR}/editing"
     "${WEBCORE_DIR}/fileapi"
     "${WEBCORE_DIR}/history"
@@ -164,7 +120,6 @@ set(WebCore_PRIVATE_INCLUDE_DIRECTORIES
     "${WEBCORE_DIR}/platform/sql"
     "${WEBCORE_DIR}/platform/text"
     "${WEBCORE_DIR}/platform/xr"
-    "${WEBCORE_DIR}/plugins"
     "${WEBCORE_DIR}/rendering"
     "${WEBCORE_DIR}/rendering/line"
     "${WEBCORE_DIR}/rendering/mathml"
@@ -181,12 +136,6 @@ set(WebCore_PRIVATE_INCLUDE_DIRECTORIES
     "${WEBCORE_DIR}/svg/graphics/filters"
     "${WEBCORE_DIR}/svg/properties"
     "${WEBCORE_DIR}/websockets"
-    "${WEBCORE_DIR}/workers"
-    "${WEBCORE_DIR}/workers/service"
-    "${WEBCORE_DIR}/workers/service/context"
-    "${WEBCORE_DIR}/workers/service/server"
-    "${WEBCORE_DIR}/workers/shared"
-    "${WEBCORE_DIR}/workers/shared/context"
     "${WEBCORE_DIR}/worklets"
     "${WEBCORE_DIR}/xml"
     "${WEBCORE_DIR}/xml/parser"
@@ -200,42 +149,19 @@ set(WebCore_IDL_INCLUDES
     inspector
     loader
     page
-    plugins
     storage
     svg
-    workers
     xml
 
     Modules/WebGPU
-    Modules/airplay
-    Modules/cache
-    Modules/compression
-    Modules/credentialmanagement
     Modules/encryptedmedia/legacy
-    Modules/entriesapi
-    Modules/fetch
-    Modules/filesystemaccess
-    Modules/geolocation
-    Modules/highlight
-    Modules/indexeddb
     Modules/mediacapabilities
     Modules/mediarecorder
     Modules/mediastream
     Modules/model-element
-    Modules/notifications
-    Modules/paymentrequest
-    Modules/permissions
-    Modules/push-api
-    Modules/reporting
-    Modules/speech
     Modules/storage
     Modules/streams
-    Modules/web-locks
     Modules/webaudio
-    Modules/webdatabase
-    Modules/websockets
-
-    bindings/js
 
     css/typedom
 
@@ -251,39 +177,6 @@ set(WebCore_IDL_INCLUDES
 )
 
 set(WebCore_NON_SVG_IDL_FILES
-    Modules/airplay/WebKitPlaybackTargetAvailabilityEvent.idl
-
-    Modules/async-clipboard/Clipboard.idl
-    Modules/async-clipboard/ClipboardItem.idl
-    Modules/async-clipboard/Navigator+Clipboard.idl
-
-    Modules/beacon/Navigator+Beacon.idl
-
-    Modules/cache/CacheQueryOptions.idl
-    Modules/cache/DOMCache.idl
-    Modules/cache/DOMCacheStorage.idl
-    Modules/cache/WindowOrWorkerGlobalScope+Caches.idl
-
-    Modules/compression/CompressionStream.idl
-    Modules/compression/CompressionStreamEncoder.idl
-    Modules/compression/DecompressionStream.idl
-    Modules/compression/DecompressionStreamDecoder.idl
-
-    Modules/contact-picker/ContactInfo.idl
-    Modules/contact-picker/ContactProperty.idl
-    Modules/contact-picker/ContactsManager.idl
-    Modules/contact-picker/ContactsSelectOptions.idl
-    Modules/contact-picker/Navigator+Contacts.idl
-
-    Modules/cookie-consent/Navigator+CookieConsent.idl
-    Modules/cookie-consent/RequestCookieConsentOptions.idl
-
-    Modules/credentialmanagement/BasicCredential.idl
-    Modules/credentialmanagement/CredentialCreationOptions.idl
-    Modules/credentialmanagement/CredentialRequestOptions.idl
-    Modules/credentialmanagement/CredentialsContainer.idl
-    Modules/credentialmanagement/Navigator+Credentials.idl
-
     Modules/encryptedmedia/MediaKeyEncryptionScheme.idl
     Modules/encryptedmedia/MediaKeyMessageEventInit.idl
     Modules/encryptedmedia/MediaKeyMessageEvent.idl
@@ -297,64 +190,6 @@ set(WebCore_NON_SVG_IDL_FILES
     Modules/encryptedmedia/MediaKeys.idl
     Modules/encryptedmedia/MediaKeysRequirement.idl
     Modules/encryptedmedia/Navigator+EME.idl
-
-    Modules/entriesapi/DOMFileSystem.idl
-    Modules/entriesapi/ErrorCallback.idl
-    Modules/entriesapi/FileCallback.idl
-    Modules/entriesapi/FileSystemDirectoryEntry.idl
-    Modules/entriesapi/FileSystemDirectoryReader.idl
-    Modules/entriesapi/FileSystemEntriesCallback.idl
-    Modules/entriesapi/FileSystemEntry.idl
-    Modules/entriesapi/FileSystemEntryCallback.idl
-    Modules/entriesapi/FileSystemFileEntry.idl
-    Modules/entriesapi/HTMLInputElement+EntriesAPI.idl
-
-    Modules/fetch/FetchBody.idl
-    Modules/fetch/FetchHeaders.idl
-    Modules/fetch/FetchReferrerPolicy.idl
-    Modules/fetch/FetchRequest.idl
-    Modules/fetch/FetchRequestCache.idl
-    Modules/fetch/FetchRequestCredentials.idl
-    Modules/fetch/FetchRequestDestination.idl
-    Modules/fetch/FetchRequestInit.idl
-    Modules/fetch/FetchRequestMode.idl
-    Modules/fetch/FetchRequestRedirect.idl
-    Modules/fetch/FetchResponse.idl
-    Modules/fetch/WindowOrWorkerGlobalScope+Fetch.idl
-
-    Modules/filesystemaccess/FileSystemDirectoryHandle.idl
-    Modules/filesystemaccess/FileSystemFileHandle.idl
-    Modules/filesystemaccess/FileSystemHandle.idl
-    Modules/filesystemaccess/FileSystemSyncAccessHandle.idl
-    Modules/filesystemaccess/StorageManager+FileSystemAccess.idl
-
-    Modules/geolocation/Geolocation.idl
-    Modules/geolocation/GeolocationCoordinates.idl
-    Modules/geolocation/GeolocationPosition.idl
-    Modules/geolocation/GeolocationPositionError.idl
-    Modules/geolocation/Navigator+Geolocation.idl
-    Modules/geolocation/PositionCallback.idl
-    Modules/geolocation/PositionErrorCallback.idl
-    Modules/geolocation/PositionOptions.idl
-
-    Modules/highlight/Highlight.idl
-    Modules/highlight/HighlightRegister.idl
-
-    Modules/indexeddb/IDBCursor.idl
-    Modules/indexeddb/IDBCursorDirection.idl
-    Modules/indexeddb/IDBCursorWithValue.idl
-    Modules/indexeddb/IDBDatabase.idl
-    Modules/indexeddb/IDBFactory.idl
-    Modules/indexeddb/IDBIndex.idl
-    Modules/indexeddb/IDBKeyRange.idl
-    Modules/indexeddb/IDBObjectStore.idl
-    Modules/indexeddb/IDBOpenDBRequest.idl
-    Modules/indexeddb/IDBRequest.idl
-    Modules/indexeddb/IDBTransaction.idl
-    Modules/indexeddb/IDBTransactionDurability.idl
-    Modules/indexeddb/IDBTransactionMode.idl
-    Modules/indexeddb/IDBVersionChangeEvent.idl
-    Modules/indexeddb/WindowOrWorkerGlobalScope+IndexedDatabase.idl
 
     Modules/mediacapabilities/AudioConfiguration.idl
     Modules/mediacapabilities/ColorGamut.idl
@@ -490,97 +325,6 @@ set(WebCore_NON_SVG_IDL_FILES
     Modules/model-element/HTMLModelElement.idl
     Modules/model-element/HTMLModelElementCamera.idl
 
-    Modules/notifications/Notification.idl
-    Modules/notifications/NotificationDirection.idl
-    Modules/notifications/NotificationEvent.idl
-    Modules/notifications/NotificationOptions.idl
-    Modules/notifications/NotificationPermission.idl
-    Modules/notifications/NotificationPermissionCallback.idl
-
-    Modules/paymentrequest/AddressErrors.idl
-    Modules/paymentrequest/MerchantValidationEvent.idl
-    Modules/paymentrequest/PayerErrorFields.idl
-    Modules/paymentrequest/PaymentAddress.idl
-    Modules/paymentrequest/PaymentComplete.idl
-    Modules/paymentrequest/PaymentCompleteDetails.idl
-    Modules/paymentrequest/PaymentCurrencyAmount.idl
-    Modules/paymentrequest/PaymentDetailsBase.idl
-    Modules/paymentrequest/PaymentDetailsInit.idl
-    Modules/paymentrequest/PaymentDetailsModifier.idl
-    Modules/paymentrequest/PaymentDetailsUpdate.idl
-    Modules/paymentrequest/PaymentItem.idl
-    Modules/paymentrequest/PaymentMethodChangeEvent.idl
-    Modules/paymentrequest/PaymentMethodData.idl
-    Modules/paymentrequest/PaymentOptions.idl
-    Modules/paymentrequest/PaymentRequest.idl
-    Modules/paymentrequest/PaymentRequestUpdateEvent.idl
-    Modules/paymentrequest/PaymentRequestUpdateEventInit.idl
-    Modules/paymentrequest/PaymentResponse.idl
-    Modules/paymentrequest/PaymentShippingOption.idl
-    Modules/paymentrequest/PaymentShippingType.idl
-    Modules/paymentrequest/PaymentValidationErrors.idl
-
-    Modules/permissions/Navigator+Permissions.idl
-    Modules/permissions/PermissionDescriptor.idl
-    Modules/permissions/PermissionName.idl
-    Modules/permissions/PermissionState.idl
-    Modules/permissions/PermissionStatus.idl
-    Modules/permissions/Permissions.idl
-    Modules/permissions/WorkerNavigator+Permissions.idl
-
-    Modules/pictureinpicture/Document+PictureInPicture.idl
-    Modules/pictureinpicture/DocumentOrShadowRoot+PictureInPicture.idl
-    Modules/pictureinpicture/HTMLVideoElement+PictureInPicture.idl
-    Modules/pictureinpicture/PictureInPictureEvent.idl
-    Modules/pictureinpicture/PictureInPictureWindow.idl
-
-    Modules/push-api/PushEncryptionKeyName.idl
-    Modules/push-api/PushEvent.idl
-    Modules/push-api/PushEventInit.idl
-    Modules/push-api/PushManager.idl
-    Modules/push-api/PushMessageData.idl
-    Modules/push-api/PushPermissionState.idl
-    Modules/push-api/PushSubscription.idl
-    Modules/push-api/PushSubscriptionChangeEvent.idl
-    Modules/push-api/PushSubscriptionChangeEventInit.idl
-    Modules/push-api/PushSubscriptionJSON.idl
-    Modules/push-api/PushSubscriptionOptions.idl
-    Modules/push-api/PushSubscriptionOptionsInit.idl
-    Modules/push-api/ServiceWorkerGlobalScope+PushAPI.idl
-    Modules/push-api/ServiceWorkerRegistration+PushAPI.idl
-
-    Modules/remoteplayback/RemotePlayback.idl
-    Modules/remoteplayback/RemotePlaybackAvailabilityCallback.idl
-
-    Modules/reporting/DeprecationReportBody.idl
-    Modules/reporting/Report.idl
-    Modules/reporting/ReportBody.idl
-    Modules/reporting/ReportingObserver.idl
-    Modules/reporting/ReportingObserverCallback.idl
-    Modules/reporting/TestReportBody.idl
-
-    Modules/screen-wake-lock/Navigator+ScreenWakeLock.idl
-    Modules/screen-wake-lock/WakeLock.idl
-    Modules/screen-wake-lock/WakeLockSentinel.idl
-    Modules/screen-wake-lock/WakeLockType.idl
-
-    Modules/speech/DOMWindow+SpeechSynthesis.idl
-    Modules/speech/SpeechRecognitionErrorEvent.idl
-    Modules/speech/SpeechRecognition.idl
-    Modules/speech/SpeechRecognitionAlternative.idl
-    Modules/speech/SpeechRecognitionErrorCode.idl
-    Modules/speech/SpeechRecognitionEvent.idl
-    Modules/speech/SpeechRecognitionResult.idl
-    Modules/speech/SpeechRecognitionResultList.idl
-    Modules/speech/SpeechSynthesisErrorEventInit.idl
-    Modules/speech/SpeechSynthesis.idl
-    Modules/speech/SpeechSynthesisErrorCode.idl
-    Modules/speech/SpeechSynthesisErrorEvent.idl
-    Modules/speech/SpeechSynthesisEvent.idl
-    Modules/speech/SpeechSynthesisEventInit.idl
-    Modules/speech/SpeechSynthesisUtterance.idl
-    Modules/speech/SpeechSynthesisVoice.idl
-
     Modules/storage/StorageManager.idl
 
     Modules/streams/ByteLengthQueuingStrategy.idl
@@ -600,13 +344,6 @@ set(WebCore_NON_SVG_IDL_FILES
     Modules/streams/WritableStreamDefaultController.idl
     Modules/streams/WritableStreamDefaultWriter.idl
     Modules/streams/WritableStreamSink.idl
-
-    Modules/web-locks/NavigatorLocks.idl
-    Modules/web-locks/WebLock.idl
-    Modules/web-locks/WebLockGrantedCallback.idl
-    Modules/web-locks/WebLockManager.idl
-    Modules/web-locks/WebLockManagerSnapshot.idl
-    Modules/web-locks/WebLockMode.idl
 
     Modules/webaudio/AnalyserNode.idl
     Modules/webaudio/AnalyserOptions.idl
@@ -685,22 +422,6 @@ set(WebCore_NON_SVG_IDL_FILES
     Modules/webaudio/WaveShaperNode.idl
     Modules/webaudio/WaveShaperOptions.idl
 
-    Modules/webauthn/AttestationConveyancePreference.idl
-    Modules/webauthn/AuthenticationExtensionsClientInputs.idl
-    Modules/webauthn/AuthenticationExtensionsClientOutputs.idl
-    Modules/webauthn/AuthenticatorAssertionResponse.idl
-    Modules/webauthn/AuthenticatorAttachment.idl
-    Modules/webauthn/AuthenticatorAttestationResponse.idl
-    Modules/webauthn/AuthenticatorResponse.idl
-    Modules/webauthn/AuthenticatorTransport.idl
-    Modules/webauthn/PublicKeyCredential.idl
-    Modules/webauthn/PublicKeyCredentialCreationOptions.idl
-    Modules/webauthn/PublicKeyCredentialDescriptor.idl
-    Modules/webauthn/PublicKeyCredentialRequestOptions.idl
-    Modules/webauthn/PublicKeyCredentialType.idl
-    Modules/webauthn/ResidentKeyRequirement.idl
-    Modules/webauthn/UserVerificationRequirement.idl
-
     Modules/webcodecs/AvcEncoderConfig.idl
     Modules/webcodecs/BitrateMode.idl
     Modules/webcodecs/LatencyMode.idl
@@ -728,23 +449,6 @@ set(WebCore_NON_SVG_IDL_FILES
     Modules/webcodecs/WebCodecsVideoEncoderSupport.idl
     Modules/webcodecs/WebCodecsVideoFrameOutputCallback.idl
     Modules/webcodecs/WebCodecsVideoFrame.idl
-
-    Modules/webdatabase/DOMWindow+WebDatabase.idl
-    Modules/webdatabase/Database.idl
-    Modules/webdatabase/DatabaseCallback.idl
-    Modules/webdatabase/SQLError.idl
-    Modules/webdatabase/SQLResultSet.idl
-    Modules/webdatabase/SQLResultSetRowList.idl
-    Modules/webdatabase/SQLStatementCallback.idl
-    Modules/webdatabase/SQLStatementErrorCallback.idl
-    Modules/webdatabase/SQLTransaction.idl
-    Modules/webdatabase/SQLTransactionCallback.idl
-    Modules/webdatabase/SQLTransactionErrorCallback.idl
-
-    Modules/webdriver/Navigator+WebDriver.idl
-
-    Modules/websockets/CloseEvent.idl
-    Modules/websockets/WebSocket.idl
 
     accessibility/AccessibilityRole.idl
     accessibility/AriaAttributes.idl
@@ -1314,33 +1018,6 @@ set(WebCore_NON_SVG_IDL_FILES
     storage/Storage.idl
     storage/StorageEvent.idl
 
-    workers/AbstractWorker.idl
-    workers/DedicatedWorkerGlobalScope.idl
-    workers/Worker.idl
-    workers/WorkerGlobalScope.idl
-    workers/WorkerLocation.idl
-    workers/WorkerOptions.idl
-    workers/WorkerType.idl
-
-    workers/service/ExtendableEvent.idl
-    workers/service/ExtendableEventInit.idl
-    workers/service/ExtendableMessageEvent.idl
-    workers/service/FetchEvent.idl
-    workers/service/NavigationPreloadManager.idl
-    workers/service/NavigationPreloadState.idl
-    workers/service/ServiceWorker.idl
-    workers/service/ServiceWorkerClient.idl
-    workers/service/ServiceWorkerClientType.idl
-    workers/service/ServiceWorkerClients.idl
-    workers/service/ServiceWorkerContainer.idl
-    workers/service/ServiceWorkerGlobalScope.idl
-    workers/service/ServiceWorkerRegistration.idl
-    workers/service/ServiceWorkerUpdateViaCache.idl
-    workers/service/ServiceWorkerWindowClient.idl
-
-    workers/shared/SharedWorker.idl
-    workers/shared/SharedWorkerGlobalScope.idl
-
     worklets/PaintWorkletGlobalScope.idl
     worklets/Worklet.idl
     worklets/WorkletGlobalScope.idl
@@ -1349,10 +1026,6 @@ set(WebCore_NON_SVG_IDL_FILES
     xml/CustomXPathNSResolver.idl
     xml/DOMParser.idl
     xml/ParseFromStringOptions.idl
-    xml/XMLHttpRequest.idl
-    xml/XMLHttpRequestEventTarget.idl
-    xml/XMLHttpRequestProgressEvent.idl
-    xml/XMLHttpRequestUpload.idl
     xml/XMLSerializer.idl
     xml/XPathEvaluator.idl
     xml/XPathEvaluatorBase.idl
@@ -1490,79 +1163,6 @@ set(WebCore_SVG_IDL_FILES
     svg/SVGViewElement.idl
     svg/SVGViewSpec.idl
     svg/SVGZoomAndPan.idl
-)
-
-list(APPEND WebCore_PRIVATE_INCLUDE_DIRECTORIES
-    "${WEBCORE_DIR}/Modules/gamepad"
-)
-
-list(APPEND WebCore_IDL_INCLUDES
-    Modules/gamepad
-)
-
-list(APPEND WebCore_NON_SVG_IDL_FILES
-    Modules/gamepad/Gamepad.idl
-    Modules/gamepad/GamepadButton.idl
-    Modules/gamepad/GamepadEvent.idl
-    Modules/gamepad/Navigator+Gamepad.idl
-    Modules/gamepad/WindowEventHandlers+Gamepad.idl
-)
-
-if (ENABLE_GAMEPAD)
-    list(APPEND WebCore_SOURCES
-        Modules/gamepad/Gamepad.cpp
-        Modules/gamepad/GamepadButton.cpp
-        Modules/gamepad/GamepadEvent.cpp
-        Modules/gamepad/GamepadManager.cpp
-        Modules/gamepad/NavigatorGamepad.cpp
-
-        platform/gamepad/EmptyGamepadProvider.cpp
-        platform/gamepad/GamepadProvider.cpp
-    )
-endif ()
-
-list(APPEND WebCore_NON_SVG_IDL_FILES
-    Modules/webxr/Navigator+WebXR.idl
-    Modules/webxr/WebXRBoundedReferenceSpace.idl
-    Modules/webxr/WebXRFrame+HandInput.idl
-    Modules/webxr/WebXRFrame.idl
-    Modules/webxr/WebXRHand.idl
-    Modules/webxr/WebXRInputSource+Gamepad.idl
-    Modules/webxr/WebXRInputSource+HandInput.idl
-    Modules/webxr/WebXRInputSource.idl
-    Modules/webxr/WebXRInputSourceArray.idl
-    Modules/webxr/WebXRJointPose.idl
-    Modules/webxr/WebXRJointSpace.idl
-    Modules/webxr/WebXRLayer.idl
-    Modules/webxr/WebXRPose.idl
-    Modules/webxr/WebXRReferenceSpace.idl
-    Modules/webxr/WebXRRenderState.idl
-    Modules/webxr/WebXRRigidTransform.idl
-    Modules/webxr/WebXRSession+AR.idl
-    Modules/webxr/WebXRSession.idl
-    Modules/webxr/WebXRSpace.idl
-    Modules/webxr/WebXRSystem.idl
-    Modules/webxr/WebXRView.idl
-    Modules/webxr/WebXRViewerPose.idl
-    Modules/webxr/WebXRViewport.idl
-    Modules/webxr/WebXRWebGLLayer.idl
-    Modules/webxr/XREnvironmentBlendMode.idl
-    Modules/webxr/XREye.idl
-    Modules/webxr/XRFrameRequestCallback.idl
-    Modules/webxr/XRHandJoint.idl
-    Modules/webxr/XRHandedness.idl
-    Modules/webxr/XRInputSourceEvent.idl
-    Modules/webxr/XRInputSourcesChangeEvent.idl
-    Modules/webxr/XRInteractionMode.idl
-    Modules/webxr/XRReferenceSpaceEvent.idl
-    Modules/webxr/XRReferenceSpaceType.idl
-    Modules/webxr/XRRenderStateInit.idl
-    Modules/webxr/XRSessionEvent.idl
-    Modules/webxr/XRSessionInit.idl
-    Modules/webxr/XRSessionMode.idl
-    Modules/webxr/XRTargetRayMode.idl
-    Modules/webxr/XRVisibilityState.idl
-    Modules/webxr/XRWebGLLayerInit.idl
 )
 
 list(APPEND WebCore_NON_SVG_IDL_FILES
@@ -1790,7 +1390,6 @@ endif ()
 
 set(WebCoreTestSupport_FRAMEWORKS ${WebCore_FRAMEWORKS})
 set(WebCoreTestSupport_DEPENDENCIES WebCoreTestSupportBindings)
-set(WebCoreTestSupport_PRIVATE_HEADERS testing/js/WebCoreTestSupport.h)
 
 if (ENABLE_LEGACY_ENCRYPTED_MEDIA)
     list(APPEND WebCore_SOURCES
@@ -2059,94 +1658,8 @@ endif ()
 set(WebCoreTestSupport_PRIVATE_INCLUDE_DIRECTORIES
     "${WEBCORE_DIR}/platform/mock"
     "${WEBCORE_DIR}/testing"
-    "${WEBCORE_DIR}/testing/js"
     "${WebCore_DERIVED_SOURCES_DIR}"
 )
-
-set(WebCoreTestSupport_IDL_INCLUDES
-    testing
-)
-
-set(WebCoreTestSupport_IDL_FILES
-    testing/GCObservation.idl
-    testing/InternalSettings.idl
-    testing/Internals.idl
-    testing/InternalsMapLike.idl
-    testing/InternalsSetLike.idl
-    testing/MallocStatistics.idl
-    testing/MemoryInfo.idl
-    testing/MockCDMFactory.idl
-    testing/MockContentFilterSettings.idl
-    testing/MockPageOverlay.idl
-    testing/ServiceWorkerInternals.idl
-    testing/TypeConversions.idl
-)
-
-list(APPEND WebCoreTestSupport_SOURCES
-    testing/GCObservation.cpp
-    testing/InternalSettings.cpp
-    testing/Internals.cpp
-    testing/InternalsMapLike.cpp
-    testing/InternalsSetLike.cpp
-    testing/MockCDMFactory.cpp
-    testing/MockGamepad.cpp
-    testing/MockGamepadProvider.cpp
-    testing/MockLibWebRTCPeerConnection.cpp
-    testing/MockPageOverlay.cpp
-    testing/MockPageOverlayClient.cpp
-    testing/ServiceWorkerInternals.cpp
-    testing/js/WebCoreTestSupport.cpp
-)
-
-if (ENABLE_WEBXR)
-    list(APPEND WebCoreTestSupport_IDL_FILES
-        testing/FakeXRBoundsPoint.idl
-        testing/FakeXRButtonStateInit.idl
-        testing/FakeXRInputSourceInit.idl
-        testing/FakeXRRigidTransformInit.idl
-        testing/FakeXRViewInit.idl
-        testing/WebFakeXRDevice.idl
-        testing/WebFakeXRInputController.idl
-        testing/WebXRTest.idl
-        testing/XRSimulateUserActivationFunction.idl
-    )
-    list(APPEND WebCoreTestSupport_SOURCES
-        testing/WebFakeXRDevice.cpp
-        testing/WebFakeXRInputController.cpp
-        testing/WebXRTest.cpp
-    )
-endif ()
-
-set(MODERN_MEDIA_CONTROLS_STYLE_SHEETS
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/activity-indicator.css"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/airplay-button.css"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/background-tint.css"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/button.css"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/buttons-container.css"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/controls-bar.css"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/inline-media-controls.css"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/ios-inline-media-controls.css"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/macos-fullscreen-media-controls.css"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/macos-inline-media-controls.css"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/adwaita-inline-media-controls.css"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/adwaita-fullscreen-media-controls.css"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/media-controls.css"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/media-document.css"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/placard.css"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/slider-base.css"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/slider.css"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/status-label.css"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/text-tracks.css"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/time-label.css"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/watchos-activity-indicator.css"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/watchos-media-controls.css"
-)
-
-if (PORT STREQUAL "GTK" OR PORT STREQUAL "WPE" OR WTF_PLATFORM_WIN_CAIRO)
-    list(APPEND MODERN_MEDIA_CONTROLS_STYLE_SHEETS
-        "${WEBCORE_DIR}/Modules/modern-media-controls/controls/adwaita-overrides.css"
-    )
-endif ()
 
 if (CMAKE_VERSION VERSION_GREATER_EQUAL 3.18)
     set(CAT_PROGRAM ${CMAKE_COMMAND} -E cat)
@@ -2154,111 +1667,6 @@ else ()
     set(CAT_PROGRAM cat)
 endif ()
 
-add_custom_command(
-    OUTPUT ${WebCore_DERIVED_SOURCES_DIR}/ModernMediaControls.css
-    DEPENDS ${MODERN_MEDIA_CONTROLS_STYLE_SHEETS}
-    COMMAND ${CAT_PROGRAM} ${MODERN_MEDIA_CONTROLS_STYLE_SHEETS} > ${WebCore_DERIVED_SOURCES_DIR}/ModernMediaControls.css
-    VERBATIM)
-
-set(MODERN_MEDIA_CONTROLS_SCRIPTS
-    "${WEBCORE_DIR}/Modules/modern-media-controls/main.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/gesture-recognizers/gesture-recognizer.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/gesture-recognizers/tap.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/gesture-recognizers/pinch.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/scheduler.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/layout-traits.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/layout-node.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/layout-item.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/icon-service.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/background-tint.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/time-control.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/time-label.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/slider-base.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/slider.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/button.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/play-pause-button.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/skip-back-button.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/skip-forward-button.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/mute-button.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/airplay-button.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/pip-button.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/tracks-button.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/fullscreen-button.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/seek-button.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/rewind-button.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/forward-button.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/overflow-button.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/buttons-container.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/status-label.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/controls-bar.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/auto-hide-controller.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/media-controls.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/background-click-delegate-notifier.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/inline-media-controls.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/ios-inline-media-controls.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/ios-layout-traits.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/macos-inline-media-controls.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/macos-fullscreen-media-controls.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/macos-layout-traits.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/placard.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/airplay-placard.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/invalid-placard.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/pip-placard.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/watchos-activity-indicator.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/watchos-media-controls.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/watchos-layout-traits.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/adwaita-inline-media-controls.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/adwaita-fullscreen-media-controls.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/controls/adwaita-layout-traits.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/media-controller-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/airplay-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/audio-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/close-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/controls-visibility-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/fullscreen-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/mute-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/overflow-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/pip-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/placard-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/playback-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/scrubbing-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/seek-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/seek-backward-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/seek-forward-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/skip-back-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/skip-forward-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/start-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/status-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/time-control-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/tracks-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/volume-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/media-document-controller.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/watchos-media-controls-support.js"
-    "${WEBCORE_DIR}/Modules/modern-media-controls/media/media-controller.js"
-)
-
-add_custom_command(
-    OUTPUT ${WebCore_DERIVED_SOURCES_DIR}/ModernMediaControls.js
-    DEPENDS ${MODERN_MEDIA_CONTROLS_SCRIPTS}
-    COMMAND ${CAT_PROGRAM} ${MODERN_MEDIA_CONTROLS_SCRIPTS} > ${WebCore_DERIVED_SOURCES_DIR}/ModernMediaControls.js
-    VERBATIM)
-
-# Modules that the bindings generator scripts may use
-set(SCRIPTS_RESOLVE_SUPPLEMENTAL
-    ${WEBCORE_DIR}/bindings/scripts/IDLParser.pm
-)
-set(SCRIPTS_BINDINGS
-    ${WEBCORE_DIR}/bindings/scripts/CodeGenerator.pm
-    ${WEBCORE_DIR}/bindings/scripts/CodeGeneratorJS.pm
-    ${WEBCORE_DIR}/bindings/scripts/IDLParser.pm
-    ${WEBCORE_DIR}/bindings/scripts/InFilesParser.pm
-    ${WEBCORE_DIR}/bindings/scripts/preprocessor.pm
-)
-
-set(MAKE_NAMES_DEPENDENCIES
-    ${WEBCORE_DIR}/bindings/scripts/Hasher.pm
-    ${WEBCORE_DIR}/bindings/scripts/StaticString.pm
-)
 set(SUPPLEMENTAL_DEPENDENCY_FILE ${WebCore_DERIVED_SOURCES_DIR}/supplemental_dependency.tmp)
 set(ISO_SUBSPACES_HEADER_FILE ${WebCore_DERIVED_SOURCES_DIR}/DOMIsoSubspaces.h)
 set(CLIENT_ISO_SUBSPACES_HEADER_FILE ${WebCore_DERIVED_SOURCES_DIR}/DOMClientIsoSubspaces.h)
@@ -2287,17 +1695,6 @@ WEBKIT_INCLUDE_CONFIG_FILES_IF_EXISTS()
 
 MAKE_HASH_TOOLS(${WEBCORE_DIR}/platform/ColorData)
 list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/ColorData.cpp)
-
-
-# Generate DOMJITAbstractHeapRepository.h
-add_custom_command(
-    OUTPUT ${WebCore_DERIVED_SOURCES_DIR}/DOMJITAbstractHeapRepository.h
-    MAIN_DEPENDENCY domjit/DOMJITAbstractHeapRepository.yaml
-    DEPENDS ${WEBCORE_DIR}/domjit/generate-abstract-heap.rb
-    COMMAND ${RUBY_EXECUTABLE} ${WEBCORE_DIR}/domjit/generate-abstract-heap.rb ${WEBCORE_DIR}/domjit/DOMJITAbstractHeapRepository.yaml ${WebCore_DERIVED_SOURCES_DIR}/DOMJITAbstractHeapRepository.h
-    VERBATIM)
-list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/DOMJITAbstractHeapRepository.h)
-
 
 # Generate HTML entity table
 add_custom_command(
@@ -2363,13 +1760,6 @@ add_custom_command(
     VERBATIM)
 list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/SelectorPseudoElementTypeMap.cpp)
 
-# Generate user agent styles
-add_custom_command(
-    OUTPUT ${WebCore_DERIVED_SOURCES_DIR}/UserAgentStyleSheetsData.cpp ${WebCore_DERIVED_SOURCES_DIR}/UserAgentStyleSheets.h
-    MAIN_DEPENDENCY ${WEBCORE_DIR}/css/make-css-file-arrays.pl
-    DEPENDS ${WebCore_USER_AGENT_STYLE_SHEETS} ${WEBCORE_DIR}/bindings/scripts/preprocessor.pm
-    COMMAND ${PERL_EXECUTABLE} ${WEBCORE_DIR}/css/make-css-file-arrays.pl --defines "${FEATURE_DEFINES_WITH_SPACE_SEPARATOR}" --preprocessor "${CODE_GENERATOR_PREPROCESSOR}" ${WebCore_DERIVED_SOURCES_DIR}/UserAgentStyleSheets.h ${WebCore_DERIVED_SOURCES_DIR}/UserAgentStyleSheetsData.cpp ${WebCore_USER_AGENT_STYLE_SHEETS}
-    VERBATIM)
 list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/UserAgentStyleSheetsData.cpp)
 ADD_SOURCE_WEBCORE_DERIVED_DEPENDENCIES(${WEBCORE_DIR}/style/StyleResolver.cpp UserAgentStyleSheetsData.cpp UserAgentStyleSheets.h)
 ADD_SOURCE_WEBCORE_DERIVED_DEPENDENCIES(${WEBCORE_DIR}/style/UserAgentStyle.cpp UserAgentStyleSheetsData.cpp UserAgentStyleSheets.h)
@@ -2390,97 +1780,11 @@ if (WebCore_USER_AGENT_SCRIPTS)
     list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/UserAgentScriptsData.cpp)
 endif ()
 
-# Generate plug-in resources
-add_custom_command(
-    OUTPUT ${WebCore_DERIVED_SOURCES_DIR}/PlugInsResourcesData.cpp ${WebCore_DERIVED_SOURCES_DIR}/PlugInsResources.h
-    MAIN_DEPENDENCY ${WEBCORE_DIR}/css/make-css-file-arrays.pl
-    DEPENDS ${WebCore_PLUG_INS_RESOURCES} ${WEBCORE_DIR}/bindings/scripts/preprocessor.pm
-    COMMAND ${PERL_EXECUTABLE} ${WEBCORE_DIR}/css/make-css-file-arrays.pl --defines "${FEATURE_DEFINES_WITH_SPACE_SEPARATOR}" --preprocessor "${CODE_GENERATOR_PREPROCESSOR}" ${WebCore_DERIVED_SOURCES_DIR}/PlugInsResources.h ${WebCore_DERIVED_SOURCES_DIR}/PlugInsResourcesData.cpp ${WebCore_PLUG_INS_RESOURCES}
-    VERBATIM)
-list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/PlugInsResourcesData.cpp)
-ADD_SOURCE_WEBCORE_DERIVED_DEPENDENCIES(${WEBCORE_DIR}/dom/Document.cpp PlugInsResourcesData.cpp PlugInsResources.h)
-
-set(FEATURE_DEFINES_JAVASCRIPT "LANGUAGE_JAVASCRIPT ${FEATURE_DEFINES_WITH_SPACE_SEPARATOR}")
-
 GENERATE_SETTINGS_MACROS(${WEBCORE_DIR}/page/Settings.yaml Settings.h)
 list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/Settings.h)
 list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/Settings.cpp)
 list(APPEND WebCoreTestSupport_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/InternalSettingsGenerated.cpp)
 list(APPEND WebCoreTestSupport_IDL_FILES ${WebCore_DERIVED_SOURCES_DIR}/InternalSettingsGenerated.idl)
-
-GENERATE_BINDINGS(WebCoreBindings
-    OUTPUT_SOURCE WebCore_SOURCES
-    INPUT_FILES ${WebCore_IDL_FILES}
-    PP_INPUT_FILES ${WebCore_IDL_FILES} ${WebCoreTestSupport_IDL_FILES}
-    BASE_DIR ${WEBCORE_DIR}
-    IDL_INCLUDES ${WebCore_IDL_INCLUDES} ${WebCore_DERIVED_SOURCES_DIR}
-    FEATURES ${FEATURE_DEFINES_JAVASCRIPT}
-    DESTINATION ${WebCore_DERIVED_SOURCES_DIR}
-    GENERATOR JS
-    SUPPLEMENTAL_DEPFILE ${SUPPLEMENTAL_DEPENDENCY_FILE}
-    PP_EXTRA_OUTPUT
-    ${ISO_SUBSPACES_HEADER_FILE} ${CLIENT_ISO_SUBSPACES_HEADER_FILE} ${CONSTRUCTORS_HEADER_FILE} ${WINDOW_CONSTRUCTORS_FILE} ${WORKERGLOBALSCOPE_CONSTRUCTORS_FILE} ${SHADOWREALMGLOBALSCOPE_CONSTRUCTORS_FILE} ${DEDICATEDWORKERGLOBALSCOPE_CONSTRUCTORS_FILE}
-    PP_EXTRA_ARGS
-        --isoSubspacesHeaderFile ${ISO_SUBSPACES_HEADER_FILE}
-        --clientISOSubspacesHeaderFile ${CLIENT_ISO_SUBSPACES_HEADER_FILE}
-        --constructorsHeaderFile ${CONSTRUCTORS_HEADER_FILE}
-        --windowConstructorsFile ${WINDOW_CONSTRUCTORS_FILE}
-        --workerGlobalScopeConstructorsFile ${WORKERGLOBALSCOPE_CONSTRUCTORS_FILE}
-        --shadowRealmGlobalScopeConstructorsFile ${SHADOWREALMGLOBALSCOPE_CONSTRUCTORS_FILE}
-        --dedicatedWorkerGlobalScopeConstructorsFile ${DEDICATEDWORKERGLOBALSCOPE_CONSTRUCTORS_FILE}
-        --serviceWorkerGlobalScopeConstructorsFile ${SERVICEWORKERGLOBALSCOPE_CONSTRUCTORS_FILE}
-        --sharedWorkerGlobalScopeConstructorsFile ${SHAREDWORKERGLOBALSCOPE_CONSTRUCTORS_FILE}
-        --workletGlobalScopeConstructorsFile ${WORKLETGLOBALSCOPE_CONSTRUCTORS_FILE}
-        --paintWorkletGlobalScopeConstructorsFile ${PAINTWORKLETGLOBALSCOPE_CONSTRUCTORS_FILE}
-        --audioWorkletGlobalScopeConstructorsFile ${AUDIOWORKLETGLOBALSCOPE_CONSTRUCTORS_FILE})
-list(APPEND WebCore_DEPENDENCIES WebCoreBindings)
-
-if (ENABLE_WEBINSPECTORUI)
-    list(APPEND WebCore_DEPENDENCIES WebInspectorUI)
-endif ()
-
-GENERATE_BINDINGS(WebCoreTestSupportBindings
-    OUTPUT_SOURCE WebCoreTestSupport_SOURCES
-    INPUT_FILES ${WebCoreTestSupport_IDL_FILES}
-    BASE_DIR ${WEBCORE_DIR}
-    IDL_INCLUDES ${WebCore_IDL_INCLUDES} ${WebCore_DERIVED_SOURCES_DIR} ${WebCoreTestSupport_IDL_INCLUDES}
-    FEATURES ${FEATURE_DEFINES_JAVASCRIPT}
-    DESTINATION ${WebCore_DERIVED_SOURCES_DIR}
-    GENERATOR JS)
-
-# WebCoreTestSupportBindings needs to have a direct or indirect
-# dependency to WebCoreBindings for CMake Visual Studio generator to
-# eliminate duplicated custom commands. Otherwise,
-# GenerateSettings.rb will be triggered in both projects.
-add_dependencies(WebCoreTestSupportBindings WebCoreBindings)
-
-# WebCore JS Builtins
-
-set(WebCore_BUILTINS_SOURCES
-    ${WEBCORE_DIR}/Modules/compression/CompressionStream.js
-    ${WEBCORE_DIR}/Modules/compression/DecompressionStream.js
-    ${WEBCORE_DIR}/Modules/streams/ByteLengthQueuingStrategy.js
-    ${WEBCORE_DIR}/Modules/streams/CountQueuingStrategy.js
-    ${WEBCORE_DIR}/Modules/streams/ReadableByteStreamController.js
-    ${WEBCORE_DIR}/Modules/streams/ReadableByteStreamInternals.js
-    ${WEBCORE_DIR}/Modules/streams/ReadableStream.js
-    ${WEBCORE_DIR}/Modules/streams/ReadableStreamBYOBReader.js
-    ${WEBCORE_DIR}/Modules/streams/ReadableStreamBYOBRequest.js
-    ${WEBCORE_DIR}/Modules/streams/ReadableStreamDefaultController.js
-    ${WEBCORE_DIR}/Modules/streams/ReadableStreamInternals.js
-    ${WEBCORE_DIR}/Modules/streams/ReadableStreamDefaultReader.js
-    ${WEBCORE_DIR}/Modules/streams/StreamInternals.js
-    ${WEBCORE_DIR}/Modules/streams/TransformStream.js
-    ${WEBCORE_DIR}/Modules/streams/TransformStreamDefaultController.js
-    ${WEBCORE_DIR}/Modules/streams/TransformStreamInternals.js
-    ${WEBCORE_DIR}/Modules/streams/WritableStreamDefaultController.js
-    ${WEBCORE_DIR}/Modules/streams/WritableStreamDefaultWriter.js
-    ${WEBCORE_DIR}/Modules/streams/WritableStreamInternals.js
-    ${WEBCORE_DIR}/dom/TextDecoderStream.js
-    ${WEBCORE_DIR}/dom/TextEncoderStream.js
-    ${WEBCORE_DIR}/bindings/js/JSDOMBindingInternals.js
-    ${WEBCORE_DIR}/inspector/CommandLineAPIModuleSource.js
-)
 
 ADD_SOURCE_WEBCORE_DERIVED_DEPENDENCIES(${WEBCORE_DIR}/html/parser/HTMLTreeBuilder.cpp MathMLNames.cpp)
 
@@ -2590,9 +1894,6 @@ else ()
     list(APPEND WebCoreTestSupport_PRIVATE_LIBRARIES ${WebCore_PRIVATE_LIBRARIES})
     list(APPEND WebCoreTestSupport_DEPENDENCIES WebCore)
 endif ()
-
-WEBKIT_FRAMEWORK(WebCoreTestSupport)
-WEBKIT_FRAMEWORK_TARGET(WebCoreTestSupport)
 
 if (${WebCore_LIBRARY_TYPE} MATCHES "SHARED")
     set_target_properties(WebCore PROPERTIES VERSION ${PROJECT_VERSION} SOVERSION ${PROJECT_VERSION_MAJOR})

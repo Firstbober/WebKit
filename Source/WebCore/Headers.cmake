@@ -129,135 +129,11 @@ set(WebCore_PRIVATE_FRAMEWORK_HEADERS
     Modules/WebGPU/GPUVertexState.h
     Modules/WebGPU/GPUVertexStepMode.h
 
-    Modules/airplay/PlaybackTargetClientContextIdentifier.h
-
-    Modules/applepay/ApplePayButtonSystemImage.h
-    Modules/applepay/ApplePayLogoSystemImage.h
-    Modules/applepay/ApplePaySessionPaymentRequest.h
-    Modules/applepay/Payment.h
-    Modules/applepay/PaymentContact.h
-    Modules/applepay/PaymentCoordinator.h
-    Modules/applepay/PaymentCoordinatorClient.h
-    Modules/applepay/PaymentHeaders.h
-    Modules/applepay/PaymentMerchantSession.h
-    Modules/applepay/PaymentMethod.h
-
-    Modules/applicationmanifest/ApplicationManifest.h
-    Modules/applicationmanifest/ApplicationManifestParser.h
-
-    Modules/cache/CacheQueryOptions.h
-    Modules/cache/CacheStorageConnection.h
-    Modules/cache/DOMCacheEngine.h
-    Modules/cache/DOMCacheIdentifier.h
-    Modules/cache/RetrieveRecordsOptions.h
-
-    Modules/compression/CompressionStreamEncoder.h
-    Modules/compression/DecompressionStreamDecoder.h
-    Modules/compression/Formats.h
-
-    Modules/contact-picker/ContactInfo.h
-    Modules/contact-picker/ContactProperty.h
-    Modules/contact-picker/ContactsRequestData.h
-
-    Modules/cookie-consent/CookieConsentDecisionResult.h
-
     Modules/encryptedmedia/CDMClient.h
     Modules/encryptedmedia/MediaKeySystemClient.h
     Modules/encryptedmedia/MediaKeySystemController.h
     Modules/encryptedmedia/MediaKeySystemRequest.h
     Modules/encryptedmedia/MediaKeySystemRequestIdentifier.h
-
-    Modules/fetch/FetchBodyConsumer.h
-    Modules/fetch/FetchBodySource.h
-    Modules/fetch/FetchHeaders.h
-    Modules/fetch/FetchIdentifier.h
-    Modules/fetch/FetchLoader.h
-    Modules/fetch/FetchLoaderClient.h
-    Modules/fetch/FetchRequestCredentials.h
-
-    Modules/filesystemaccess/FileSystemDirectoryHandle.h
-    Modules/filesystemaccess/FileSystemFileHandle.h
-    Modules/filesystemaccess/FileSystemHandle.h
-    Modules/filesystemaccess/FileSystemHandleCloseScope.h
-    Modules/filesystemaccess/FileSystemHandleIdentifier.h
-    Modules/filesystemaccess/FileSystemStorageConnection.h
-    Modules/filesystemaccess/FileSystemSyncAccessHandle.h
-    Modules/filesystemaccess/FileSystemSyncAccessHandleIdentifier.h
-    Modules/filesystemaccess/StorageManagerFileSystemAccess.h
-    Modules/filesystemaccess/WorkerFileSystemStorageConnection.h
-    Modules/filesystemaccess/WorkerFileSystemStorageConnectionCallbackIdentifier.h
-
-    Modules/geolocation/Geolocation.h
-    Modules/geolocation/GeolocationClient.h
-    Modules/geolocation/GeolocationController.h
-    Modules/geolocation/GeolocationCoordinates.h
-    Modules/geolocation/GeolocationError.h
-    Modules/geolocation/GeolocationPosition.h
-    Modules/geolocation/GeolocationPositionData.h
-    Modules/geolocation/GeolocationPositionError.h
-    Modules/geolocation/PositionCallback.h
-    Modules/geolocation/PositionErrorCallback.h
-    Modules/geolocation/PositionOptions.h
-
-    Modules/highlight/AppHighlight.h
-    Modules/highlight/Highlight.h
-    Modules/highlight/HighlightRegister.h
-    Modules/highlight/HighlightVisibility.h
-
-    Modules/indexeddb/IDBActiveDOMObject.h
-    Modules/indexeddb/IDBDatabaseIdentifier.h
-    Modules/indexeddb/IDBDatabaseNameAndVersionRequest.h
-    Modules/indexeddb/IDBGetAllResult.h
-    Modules/indexeddb/IDBGetResult.h
-    Modules/indexeddb/IDBKey.h
-    Modules/indexeddb/IDBKeyData.h
-    Modules/indexeddb/IDBKeyPath.h
-    Modules/indexeddb/IDBKeyRange.h
-    Modules/indexeddb/IDBKeyRangeData.h
-    Modules/indexeddb/IDBOpenDBRequest.h
-    Modules/indexeddb/IDBRequest.h
-    Modules/indexeddb/IDBTransaction.h
-    Modules/indexeddb/IDBTransactionDurability.h
-    Modules/indexeddb/IDBTransactionMode.h
-    Modules/indexeddb/IDBValue.h
-    Modules/indexeddb/IndexedDB.h
-
-    Modules/indexeddb/client/IDBConnectionProxy.h
-    Modules/indexeddb/client/IDBConnectionToServer.h
-    Modules/indexeddb/client/IDBConnectionToServerDelegate.h
-    Modules/indexeddb/client/TransactionOperation.h
-
-    Modules/indexeddb/server/IDBBackingStore.h
-    Modules/indexeddb/server/IDBConnectionToClient.h
-    Modules/indexeddb/server/IDBConnectionToClientDelegate.h
-    Modules/indexeddb/server/IDBServer.h
-    Modules/indexeddb/server/IndexValueEntry.h
-    Modules/indexeddb/server/IndexValueStore.h
-    Modules/indexeddb/server/MemoryBackingStoreTransaction.h
-    Modules/indexeddb/server/MemoryIDBBackingStore.h
-    Modules/indexeddb/server/SQLiteIDBBackingStore.h
-    Modules/indexeddb/server/SQLiteIDBTransaction.h
-    Modules/indexeddb/server/ServerOpenDBRequest.h
-    Modules/indexeddb/server/UniqueIDBDatabase.h
-    Modules/indexeddb/server/UniqueIDBDatabaseConnection.h
-    Modules/indexeddb/server/UniqueIDBDatabaseManager.h
-    Modules/indexeddb/server/UniqueIDBDatabaseTransaction.h
-
-    Modules/indexeddb/shared/IndexKey.h
-    Modules/indexeddb/shared/IDBCursorInfo.h
-    Modules/indexeddb/shared/IDBCursorRecord.h
-    Modules/indexeddb/shared/IDBDatabaseInfo.h
-    Modules/indexeddb/shared/IDBDatabaseNameAndVersion.h
-    Modules/indexeddb/shared/IDBError.h
-    Modules/indexeddb/shared/IDBGetAllRecordsData.h
-    Modules/indexeddb/shared/IDBGetRecordData.h
-    Modules/indexeddb/shared/IDBIndexInfo.h
-    Modules/indexeddb/shared/IDBIterateCursorData.h
-    Modules/indexeddb/shared/IDBObjectStoreInfo.h
-    Modules/indexeddb/shared/IDBRequestData.h
-    Modules/indexeddb/shared/IDBResourceIdentifier.h
-    Modules/indexeddb/shared/IDBResultData.h
-    Modules/indexeddb/shared/IDBTransactionInfo.h
 
     Modules/mediarecorder/MediaRecorderProvider.h
 
@@ -309,61 +185,6 @@ set(WebCore_PRIVATE_FRAMEWORK_HEADERS
     Modules/model-element/ModelPlayerClient.h
     Modules/model-element/ModelPlayerProvider.h
 
-    Modules/model-element/dummy/DummyModelPlayer.h
-    Modules/model-element/dummy/DummyModelPlayerProvider.h
-
-    Modules/notifications/Notification.h
-    Modules/notifications/NotificationClient.h
-    Modules/notifications/NotificationController.h
-    Modules/notifications/NotificationData.h
-    Modules/notifications/NotificationDirection.h
-    Modules/notifications/NotificationEventType.h
-    Modules/notifications/NotificationPermission.h
-    Modules/notifications/NotificationPermissionCallback.h
-    Modules/notifications/NotificationResources.h
-
-    Modules/permissions/MainThreadPermissionObserver.h
-    Modules/permissions/MainThreadPermissionObserverIdentifier.h
-    Modules/permissions/PermissionController.h
-    Modules/permissions/PermissionDescriptor.h
-    Modules/permissions/PermissionName.h
-    Modules/permissions/PermissionObserver.h
-    Modules/permissions/PermissionQuerySource.h
-    Modules/permissions/Permissions.h
-    Modules/permissions/PermissionState.h
-
-    Modules/plugins/PluginReplacement.h
-    Modules/plugins/YouTubePluginReplacement.h
-
-    Modules/push-api/PushCrypto.h
-    Modules/push-api/PushDatabase.h
-    Modules/push-api/PushMessageCrypto.h
-    Modules/push-api/PushPermissionState.h
-    Modules/push-api/PushSubscriptionData.h
-    Modules/push-api/PushSubscriptionIdentifier.h
-
-    Modules/reporting/DeprecationReportBody.h
-    Modules/reporting/Report.h
-    Modules/reporting/ReportBody.h
-    Modules/reporting/ReportingClient.h
-    Modules/reporting/ReportingObserver.h
-    Modules/reporting/ReportingObserverCallback.h
-    Modules/reporting/ReportingScope.h
-    Modules/reporting/TestReportBody.h
-    Modules/reporting/ViolationReportType.h
-
-    Modules/speech/SpeechRecognitionCaptureSource.h
-    Modules/speech/SpeechRecognitionCaptureSourceImpl.h
-    Modules/speech/SpeechRecognitionConnection.h
-    Modules/speech/SpeechRecognitionConnectionClient.h
-    Modules/speech/SpeechRecognitionConnectionClientIdentifier.h
-    Modules/speech/SpeechRecognitionError.h
-    Modules/speech/SpeechRecognitionRequest.h
-    Modules/speech/SpeechRecognitionRequestInfo.h
-    Modules/speech/SpeechRecognitionResultData.h
-    Modules/speech/SpeechRecognitionUpdate.h
-    Modules/speech/SpeechRecognizer.h
-
     Modules/storage/DummyStorageProvider.h
     Modules/storage/StorageConnection.h
     Modules/storage/StorageManager.h
@@ -380,61 +201,11 @@ set(WebCore_PRIVATE_FRAMEWORK_HEADERS
     Modules/web-locks/WebLockMode.h
     Modules/web-locks/WebLockRegistry.h
 
-    Modules/webauthn/AttestationConveyancePreference.h
-    Modules/webauthn/AuthenticationExtensionsClientInputs.h
-    Modules/webauthn/AuthenticationExtensionsClientOutputs.h
-    Modules/webauthn/AuthenticatorCoordinator.h
-    Modules/webauthn/AuthenticatorCoordinatorClient.h
-    Modules/webauthn/AuthenticatorResponseData.h
-    Modules/webauthn/AuthenticatorTransport.h
-    Modules/webauthn/PublicKeyCredentialCreationOptions.h
-    Modules/webauthn/PublicKeyCredentialDescriptor.h
-    Modules/webauthn/PublicKeyCredentialRequestOptions.h
-    Modules/webauthn/PublicKeyCredentialType.h
-    Modules/webauthn/UserVerificationRequirement.h
-    Modules/webauthn/WebAuthenticationConstants.h
-    Modules/webauthn/WebAuthenticationUtils.h
-
-    Modules/webauthn/apdu/ApduCommand.h
-    Modules/webauthn/apdu/ApduResponse.h
-
-    Modules/webauthn/cbor/CBORReader.h
-    Modules/webauthn/cbor/CBORValue.h
-    Modules/webauthn/cbor/CBORWriter.h
-
-    Modules/webauthn/fido/AuthenticatorGetInfoResponse.h
-    Modules/webauthn/fido/AuthenticatorSupportedOptions.h
-    Modules/webauthn/fido/DeviceRequestConverter.h
-    Modules/webauthn/fido/DeviceResponseConverter.h
-    Modules/webauthn/fido/FidoConstants.h
-    Modules/webauthn/fido/FidoHidMessage.h
-    Modules/webauthn/fido/FidoHidPacket.h
-    Modules/webauthn/fido/U2fCommandConstructor.h
-    Modules/webauthn/fido/U2fResponseConverter.h
-
     Modules/webcodecs/WebCodecsEncodedVideoChunk.h
     Modules/webcodecs/WebCodecsEncodedVideoChunkData.h
     Modules/webcodecs/WebCodecsEncodedVideoChunkType.h
     Modules/webcodecs/WebCodecsVideoFrame.h
     Modules/webcodecs/WebCodecsVideoFrameData.h
-
-    Modules/webdatabase/DatabaseDetails.h
-    Modules/webdatabase/DatabaseManager.h
-    Modules/webdatabase/DatabaseManagerClient.h
-    Modules/webdatabase/DatabaseTracker.h
-    Modules/webdatabase/OriginLock.h
-
-    Modules/websockets/ThreadableWebSocketChannel.h
-    Modules/websockets/WebSocketChannel.h
-    Modules/websockets/WebSocketChannelClient.h
-    Modules/websockets/WebSocketChannelInspector.h
-    Modules/websockets/WebSocketDeflateFramer.h
-    Modules/websockets/WebSocketDeflater.h
-    Modules/websockets/WebSocketExtensionDispatcher.h
-    Modules/websockets/WebSocketExtensionProcessor.h
-    Modules/websockets/WebSocketFrame.h
-    Modules/websockets/WebSocketIdentifier.h
-    Modules/websockets/WebSocketHandshake.h
 
     accessibility/AXLogger.h
     accessibility/AXObjectCache.h
@@ -467,90 +238,11 @@ set(WebCore_PRIVATE_FRAMEWORK_HEADERS
     animation/PlaybackDirection.h
     animation/WebAnimationTypes.h
 
-    bindings/IDLTypes.h
-
-    bindings/js/BufferSource.h
-    bindings/js/CachedScriptFetcher.h
-    bindings/js/CommonVM.h
-    bindings/js/DOMPromiseProxy.h
-    bindings/js/DOMWrapperWorld.h
-    bindings/js/ExceptionDetails.h
-    bindings/js/GCController.h
-    bindings/js/IDBBindingUtilities.h
-    bindings/js/JSCSSRuleCustom.h
-    bindings/js/JSCSSStyleDeclarationCustom.h
-    bindings/js/JSDOMBinding.h
-    bindings/js/JSDOMBindingSecurity.h
-    bindings/js/JSDOMCastThisValue.h
-    bindings/js/JSDOMConvert.h
-    bindings/js/JSDOMConvertAny.h
-    bindings/js/JSDOMConvertBase.h
-    bindings/js/JSDOMConvertBoolean.h
-    bindings/js/JSDOMConvertBufferSource.h
-    bindings/js/JSDOMConvertCallbacks.h
-    bindings/js/JSDOMConvertDate.h
-    bindings/js/JSDOMConvertDictionary.h
-    bindings/js/JSDOMConvertEnumeration.h
-    bindings/js/JSDOMConvertEventListener.h
-    bindings/js/JSDOMConvertIndexedDB.h
-    bindings/js/JSDOMConvertInterface.h
-    bindings/js/JSDOMConvertJSON.h
-    bindings/js/JSDOMConvertNull.h
-    bindings/js/JSDOMConvertNullable.h
-    bindings/js/JSDOMConvertNumbers.h
-    bindings/js/JSDOMConvertObject.h
-    bindings/js/JSDOMConvertRecord.h
-    bindings/js/JSDOMConvertSequences.h
-    bindings/js/JSDOMConvertSerializedScriptValue.h
-    bindings/js/JSDOMConvertStrings.h
-    bindings/js/JSDOMConvertUnion.h
-    bindings/js/JSDOMConvertWebGL.h
-    bindings/js/JSDOMConvertXPathNSResolver.h
-    bindings/js/JSDOMExceptionHandling.h
-    bindings/js/JSDOMGlobalObject.h
-    bindings/js/JSDOMGuardedObject.h
-    bindings/js/JSDOMMicrotask.h
-    bindings/js/JSDOMOperation.h
-    bindings/js/JSDOMPromiseDeferred.h
-    bindings/js/JSDOMWindowBase.h
-    bindings/js/JSDOMWrapper.h
-    bindings/js/JSDOMWrapperCache.h
-    bindings/js/JSDocumentCustom.h
-    bindings/js/JSElementCustom.h
-    bindings/js/JSEventCustom.h
-    bindings/js/JSEventTargetCustom.h
-    bindings/js/JSExecState.h
-    bindings/js/JSMediaListCustom.h
-    bindings/js/JSNodeCustom.h
-    bindings/js/JSNodeListCustom.h
-    bindings/js/JSPluginElementFunctions.h
-    bindings/js/JSShadowRealmGlobalScopeBase.h
-    bindings/js/JSStyleSheetCustom.h
-    bindings/js/JSValueInWrappedObject.h
-    bindings/js/JSWindowProxy.h
-    bindings/js/ReadableStreamDefaultController.h
-    bindings/js/RunJavaScriptParameters.h
-    bindings/js/ScriptCachedFrameData.h
-    bindings/js/ScriptController.h
-    bindings/js/ScriptWrappable.h
-    bindings/js/ScriptWrappableInlines.h
-    bindings/js/SerializedScriptValue.h
-    bindings/js/StringAdaptors.h
-    bindings/js/WebAssemblyCachedScriptSourceProvider.h
-    bindings/js/WebAssemblyScriptSourceCode.h
-    bindings/js/WebCoreJITOperations.h
-    bindings/js/WebCoreOpaqueRoot.h
-    bindings/js/WebCoreTypedArrayController.h
-    bindings/js/WindowProxy.h
-    bindings/js/WorkerScriptFetcher.h
-
     bridge/Bridge.h
     bridge/IdentifierRep.h
     bridge/runtime_method.h
     bridge/runtime_object.h
     bridge/runtime_root.h
-
-    bridge/jsc/BridgeJSC.h
 
     contentextensions/CombinedFiltersAlphabet.h
     contentextensions/CombinedURLFilters.h
@@ -647,8 +339,6 @@ set(WebCore_PRIVATE_FRAMEWORK_HEADERS
 
     css/query/GenericMediaQueryTypes.h
     css/query/MediaQuery.h
-
-    cssjit/CompiledSelector.h
 
     display/DisplayTree.h
     display/DisplayTreeBuilder.h
@@ -2093,75 +1783,6 @@ set(WebCore_PRIVATE_FRAMEWORK_HEADERS
 
     testing/MockGamepad.h
     testing/MockGamepadProvider.h
-
-    workers/ScriptBuffer.h
-    workers/WorkerAnimationController.h
-    workers/WorkerDebuggerProxy.h
-    workers/WorkerFetchResult.h
-    workers/WorkerFontLoadRequest.h
-    workers/WorkerGlobalScope.h
-    workers/WorkerInitializationData.h
-    workers/WorkerLoaderProxy.h
-    workers/WorkerObjectProxy.h
-    workers/WorkerOptions.h
-    workers/WorkerOrWorkletGlobalScope.h
-    workers/WorkerOrWorkletScriptController.h
-    workers/WorkerOrWorkletThread.h
-    workers/WorkerReportingProxy.h
-    workers/WorkerRunLoop.h
-    workers/WorkerScriptLoader.h
-    workers/WorkerScriptLoaderClient.h
-    workers/WorkerThread.h
-    workers/WorkerThreadMode.h
-    workers/WorkerThreadType.h
-    workers/WorkerType.h
-
-    workers/service/ExtendableEvent.h
-    workers/service/ExtendableEventInit.h
-    workers/service/FetchEvent.h
-    workers/service/NavigationPreloadState.h
-    workers/service/SWClientConnection.h
-    workers/service/ServiceWorkerClientData.h
-    workers/service/ServiceWorkerClientQueryOptions.h
-    workers/service/ServiceWorkerClientType.h
-    workers/service/ServiceWorkerContextData.h
-    workers/service/ServiceWorkerData.h
-    workers/service/ServiceWorkerIdentifier.h
-    workers/service/ServiceWorkerJob.h
-    workers/service/ServiceWorkerJobClient.h
-    workers/service/ServiceWorkerJobData.h
-    workers/service/ServiceWorkerJobDataIdentifier.h
-    workers/service/ServiceWorkerJobType.h
-    workers/service/ServiceWorkerProvider.h
-    workers/service/ServiceWorkerRegistrationData.h
-    workers/service/ServiceWorkerRegistrationKey.h
-    workers/service/ServiceWorkerRegistrationOptions.h
-    workers/service/ServiceWorkerTypes.h
-    workers/service/ServiceWorkerUpdateViaCache.h
-
-    workers/service/context/SWContextManager.h
-    workers/service/context/ServiceWorkerDebuggable.h
-    workers/service/context/ServiceWorkerFetch.h
-    workers/service/context/ServiceWorkerInspectorProxy.h
-    workers/service/context/ServiceWorkerThread.h
-    workers/service/context/ServiceWorkerThreadProxy.h
-
-    workers/service/server/RegistrationDatabase.h
-    workers/service/server/SWOriginStore.h
-    workers/service/server/SWServer.h
-    workers/service/server/SWServerRegistration.h
-    workers/service/server/SWServerToContextConnection.h
-    workers/service/server/SWServerWorker.h
-
-    workers/shared/SharedWorkerIdentifier.h
-    workers/shared/SharedWorkerKey.h
-    workers/shared/SharedWorkerObjectConnection.h
-    workers/shared/SharedWorkerObjectIdentifier.h
-    workers/shared/SharedWorkerProvider.h
-
-    workers/shared/context/SharedWorkerContextManager.h
-    workers/shared/context/SharedWorkerThread.h
-    workers/shared/context/SharedWorkerThreadProxy.h
 
     xml/CustomXPathNSResolver.h
     xml/XPathExpression.h
