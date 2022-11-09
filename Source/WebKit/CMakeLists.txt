@@ -649,25 +649,6 @@ set(WebKit_AUTOMATION_PROTOCOL_GENERATOR_INPUTS
 )
 
 add_custom_command(
-    OUTPUT ${WebKit_DERIVED_SOURCES_DIR}/AutomationBackendDispatchers.h ${WebKit_DERIVED_SOURCES_DIR}/AutomationBackendDispatchers.cpp ${WebKit_DERIVED_SOURCES_DIR}/AutomationProtocolObjects.h ${WebKit_DERIVED_SOURCES_DIR}/AutomationProtocolObjects.cpp ${WebKit_DERIVED_SOURCES_DIR}/AutomationFrontendDispatchers.h ${WebKit_DERIVED_SOURCES_DIR}/AutomationFrontendDispatchers.cpp
-    MAIN_DEPENDENCY ${WebKit_AUTOMATION_PROTOCOL_GENERATOR_INPUTS}
-    DEPENDS ${WebKit_AUTOMATION_PROTOCOL_GENERATOR_SCRIPTS}
-    COMMAND ${PYTHON_EXECUTABLE} ${PROTOCOL_GENERATOR_SCRIPTS_DIR}/generate-inspector-protocol-bindings.py --outputDir "${WebKit_DERIVED_SOURCES_DIR}" --framework WebKit ${WebKit_AUTOMATION_PROTOCOL_GENERATOR_EXTRA_FLAGS} --backend ${WebKit_AUTOMATION_PROTOCOL_GENERATOR_INPUTS}
-    VERBATIM)
-
-list(APPEND WebKit_HEADERS
-    ${WebKit_DERIVED_SOURCES_DIR}/AutomationBackendDispatchers.h
-    ${WebKit_DERIVED_SOURCES_DIR}/AutomationFrontendDispatchers.h
-    ${WebKit_DERIVED_SOURCES_DIR}/AutomationProtocolObjects.h
-)
-
-list(APPEND WebKit_SOURCES
-    ${WebKit_DERIVED_SOURCES_DIR}/AutomationBackendDispatchers.cpp
-    ${WebKit_DERIVED_SOURCES_DIR}/AutomationFrontendDispatchers.cpp
-    ${WebKit_DERIVED_SOURCES_DIR}/AutomationProtocolObjects.cpp
-)
-
-add_custom_command(
     OUTPUT ${WebKit_DERIVED_SOURCES_DIR}/WebAutomationSessionProxyScriptSource.h ${WebKit_DERIVED_SOURCES_DIR}/WebAutomationSessionProxy.min.js
     MAIN_DEPENDENCY ${WEBKIT_DIR}/WebProcess/Automation/WebAutomationSessionProxy.js
     DEPENDS ${JavaScriptCore_SCRIPTS_DIR}/xxd.pl ${JavaScriptCore_SCRIPTS_DIR}/jsmin.py

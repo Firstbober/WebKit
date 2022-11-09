@@ -84,34 +84,3 @@ target_include_directories(TestWebKitAPIInjectedBundle SYSTEM PRIVATE
     ${GLIB_INCLUDE_DIRS}
 )
 
-# TestJSC
-set(TestJSC_SOURCES
-    Tests/JavaScriptCore/glib/TestJSC.cpp
-)
-
-set(TestJSC_SYSTEM_INCLUDE_DIRECTORIES
-    ${GLIB_INCLUDE_DIRS}
-)
-
-set(TestJSC_PRIVATE_INCLUDE_DIRECTORIES
-    ${CMAKE_BINARY_DIR}
-    ${TESTWEBKITAPI_DIR}
-)
-
-set(TestJSC_LIBRARIES
-    ${GLIB_LIBRARIES}
-    ${GLIB_GMODULE_LIBRARIES}
-    WebKit::JavaScriptCore
-)
-
-set(TestJSC_DEFINITIONS
-    WEBKIT_SRC_DIR="${CMAKE_SOURCE_DIR}"
-)
-
-WEBKIT_EXECUTABLE_DECLARE(TestJSC)
-WEBKIT_TEST(TestJSC)
-
-# TestJavaScriptCore
-list(APPEND TestJavaScriptCore_SYSTEM_INCLUDE_DIRECTORIES
-    ${GLIB_INCLUDE_DIRS}
-)

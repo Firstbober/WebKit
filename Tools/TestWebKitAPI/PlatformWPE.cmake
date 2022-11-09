@@ -23,11 +23,6 @@ list(APPEND TestWTF_SYSTEM_INCLUDE_DIRECTORIES
     ${GLIB_INCLUDE_DIRS}
 )
 
-# TestJavaScriptCore
-list(APPEND TestJavaScriptCore_SYSTEM_INCLUDE_DIRECTORIES
-    ${GLIB_INCLUDE_DIRS}
-)
-
 # TestWebCore
 list(APPEND TestWebCore_SOURCES
     ${test_main_SOURCES}
@@ -85,38 +80,3 @@ target_include_directories(TestWebKitAPIInjectedBundle PRIVATE
     ${FORWARDING_HEADERS_DIR}
     ${GLIB_INCLUDE_DIRS}
 )
-
-# TestJSC
-set(TestJSC_SOURCES
-    Tests/JavaScriptCore/glib/TestJSC.cpp
-)
-
-set(TestJSC_SYSTEM_INCLUDE_DIRECTORIES
-    ${GLIB_INCLUDE_DIRS}
-)
-
-set(TestJSC_PRIVATE_INCLUDE_DIRECTORIES
-    ${CMAKE_BINARY_DIR}
-    ${TESTWEBKITAPI_DIR}
-)
-
-set(TestJSC_LIBRARIES
-    ${GLIB_LIBRARIES}
-    ${GLIB_GMODULE_LIBRARIES}
-)
-
-set(TestJSC_FRAMEWORKS
-    JavaScriptCore
-    WTF
-)
-
-if (NOT USE_SYSTEM_MALLOC)
-    list(APPEND TestJSC_FRAMEWORKS bmalloc)
-endif ()
-
-set(TestJSC_DEFINITIONS
-    WEBKIT_SRC_DIR="${CMAKE_SOURCE_DIR}"
-)
-
-WEBKIT_EXECUTABLE_DECLARE(TestJSC)
-WEBKIT_TEST(TestJSC)

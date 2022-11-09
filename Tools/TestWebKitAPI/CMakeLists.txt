@@ -141,35 +141,6 @@ endif ()
 
 WEBKIT_EXECUTABLE_DECLARE(TestWTF)
 
-# TestJavaScriptCore definitions
-if (ENABLE_JAVASCRIPTCORE)
-    set(TestJavaScriptCore_SOURCES
-        TestsController.cpp
-
-        Tests/JavaScriptCore/DisallowVMEntry.cpp
-        Tests/JavaScriptCore/InspectorConsoleMessage.cpp
-        Tests/JavaScriptCore/PropertySlot.cpp
-    )
-
-    set(TestJavaScriptCore_LIBRARIES
-        WebKit::gtest
-    )
-    set(TestJavaScriptCore_FRAMEWORKS
-        JavaScriptCore
-        WTF
-    )
-    if (NOT USE_SYSTEM_MALLOC)
-        list(APPEND TestJavaScriptCore_FRAMEWORKS bmalloc)
-    endif ()
-
-    set(TestJavaScriptCore_PRIVATE_INCLUDE_DIRECTORIES
-        ${CMAKE_BINARY_DIR}
-        ${TESTWEBKITAPI_DIR}
-    )
-
-    WEBKIT_EXECUTABLE_DECLARE(TestJavaScriptCore)
-endif ()
-
 # TestWebCore definitions
 if (ENABLE_WEBCORE)
     set(TestWebCore_SOURCES
@@ -211,7 +182,6 @@ if (ENABLE_WEBCORE)
         WebKit::gtest
     )
     set(TestWebCore_FRAMEWORKS
-        JavaScriptCore
         PAL
         WTF
         WebCore
@@ -269,7 +239,6 @@ if (ENABLE_WEBKIT)
         Tests/WebKit/DocumentStartUserScriptAlertCrash.cpp
         Tests/WebKit/DownloadDecideDestinationCrash.cpp
         Tests/WebKit/EnumerateMediaDevices.cpp
-        Tests/WebKit/EvaluateJavaScript.cpp
         Tests/WebKit/FailedLoad.cpp
         Tests/WebKit/Find.cpp
         Tests/WebKit/FirstMeaningfulPaintMilestone.cpp
@@ -316,7 +285,6 @@ if (ENABLE_WEBKIT)
 
     set(TestWebKit_PRIVATE_INCLUDE_DIRECTORIES
         ${CMAKE_BINARY_DIR}
-        ${JavaScriptCore_PRIVATE_FRAMEWORK_HEADERS_DIR}
         ${PAL_FRAMEWORK_HEADERS_DIR}
         ${TESTWEBKITAPI_DIR}
         ${WebCore_PRIVATE_FRAMEWORK_HEADERS_DIR}
@@ -336,7 +304,6 @@ if (ENABLE_WEBKIT)
     )
 
     add_library(TestWebKitAPIBase STATIC
-        JavaScriptTest.cpp
         PlatformUtilities.cpp
         TestsController.cpp
     )
@@ -413,11 +380,6 @@ WEBKIT_INCLUDE_CONFIG_FILES_IF_EXISTS()
 
 # TestWTF target
 WEBKIT_TEST(TestWTF)
-
-# TestJavaScriptCore target
-if (ENABLE_JAVASCRIPTCORE)
-    WEBKIT_TEST(TestJavaScriptCore)
-endif ()
 
 # TestWebCore target
 if (ENABLE_WEBCORE)

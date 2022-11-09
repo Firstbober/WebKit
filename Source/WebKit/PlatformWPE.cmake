@@ -1,6 +1,5 @@
 include(GNUInstallDirs)
 include(GLib.cmake)
-include(InspectorGResources.cmake)
 
 if (ENABLE_PDFJS)
     include(PdfJSGResources.cmake)
@@ -19,7 +18,6 @@ file(MAKE_DIRECTORY ${DERIVED_SOURCES_WPE_API_DIR})
 file(MAKE_DIRECTORY ${FORWARDING_HEADERS_WPE_DIR})
 file(MAKE_DIRECTORY ${FORWARDING_HEADERS_WPE_EXTENSION_DIR})
 file(MAKE_DIRECTORY ${FORWARDING_HEADERS_WPE_DOM_DIR})
-file(MAKE_DIRECTORY ${FORWARDING_HEADERS_WPE_JSC_DIR})
 
 configure_file(Shared/glib/BuildRevision.h.in ${FORWARDING_HEADERS_WPE_DIR}/BuildRevision.h)
 configure_file(UIProcess/API/wpe/WebKitVersion.h.in ${DERIVED_SOURCES_WPE_API_DIR}/WebKitVersion.h)
@@ -74,18 +72,11 @@ add_custom_command(
     VERBATIM
 )
 
-add_custom_command(
-    OUTPUT ${FORWARDING_HEADERS_WPE_JSC_DIR}/jsc
-    DEPENDS ${JAVASCRIPTCORE_DIR}/API/glib/
-    COMMAND ln -n -s -f ${JAVASCRIPTCORE_DIR}/API/glib ${FORWARDING_HEADERS_WPE_JSC_DIR}/jsc
-    VERBATIM
-)
 
 add_custom_target(webkitwpe-fake-api-headers
     DEPENDS ${FORWARDING_HEADERS_WPE_DIR}/wpe
             ${FORWARDING_HEADERS_WPE_EXTENSION_DIR}/wpe
             ${FORWARDING_HEADERS_WPE_DOM_DIR}/wpe
-            ${FORWARDING_HEADERS_WPE_JSC_DIR}/jsc
 )
 
 list(APPEND WebKit_DEPENDENCIES
@@ -174,7 +165,6 @@ set(WPE_API_HEADER_TEMPLATES
     ${WEBKIT_DIR}/UIProcess/API/glib/WebKitHitTestResult.h.in
     ${WEBKIT_DIR}/UIProcess/API/glib/WebKitInputMethodContext.h.in
     ${WEBKIT_DIR}/UIProcess/API/glib/WebKitInstallMissingMediaPluginsPermissionRequest.h.in
-    ${WEBKIT_DIR}/UIProcess/API/glib/WebKitJavascriptResult.h.in
     ${WEBKIT_DIR}/UIProcess/API/glib/WebKitMediaKeySystemPermissionRequest.h.in
     ${WEBKIT_DIR}/UIProcess/API/glib/WebKitMemoryPressureSettings.h.in
     ${WEBKIT_DIR}/UIProcess/API/glib/WebKitMimeInfo.h.in
@@ -425,25 +415,6 @@ if (ENABLE_BREAKPAD)
     )
 endif ()
 
-WEBKIT_BUILD_INSPECTOR_GRESOURCES(${WebInspectorUI_DERIVED_SOURCES_DIR})
-list(APPEND WPEWebInspectorResources_DERIVED_SOURCES
-    ${WebInspectorUI_DERIVED_SOURCES_DIR}/InspectorGResourceBundle.c
-)
-
-list(APPEND WPEWebInspectorResources_LIBRARIES
-    ${GLIB_GIO_LIBRARIES}
-)
-
-list(APPEND WPEWebInspectorResources_SYSTEM_INCLUDE_DIRECTORIES
-    ${GLIB_INCLUDE_DIRS}
-)
-
-add_library(WPEWebInspectorResources SHARED ${WPEWebInspectorResources_DERIVED_SOURCES})
-add_dependencies(WPEWebInspectorResources WebKit)
-target_link_libraries(WPEWebInspectorResources ${WPEWebInspectorResources_LIBRARIES})
-target_include_directories(WPEWebInspectorResources SYSTEM PUBLIC ${WPEWebInspectorResources_SYSTEM_INCLUDE_DIRECTORIES})
-install(TARGETS WPEWebInspectorResources DESTINATION "${LIB_INSTALL_DIR}/wpe-webkit-${WPE_API_VERSION}")
-
 add_library(WPEInjectedBundle MODULE "${WEBKIT_DIR}/WebProcess/InjectedBundle/API/glib/WebKitInjectedBundleMain.cpp")
 ADD_WEBKIT_PREFIX_HEADER(WPEInjectedBundle)
 target_link_libraries(WPEInjectedBundle WebKit)
@@ -469,7 +440,6 @@ if (ENABLE_WPE_QT_API)
 
     set(qtwpe_INCLUDE_DIRECTORIES
         $<TARGET_PROPERTY:WebKit,INCLUDE_DIRECTORIES>
-        ${JavaScriptCoreGLib_FRAMEWORK_HEADERS_DIR}
         ${CMAKE_BINARY_DIR}
         ${GLIB_INCLUDE_DIRS}
         ${Qt5_INCLUDE_DIRS}
@@ -521,44 +491,14 @@ install(FILES ${WPE_API_INSTALLED_HEADERS}
         DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/wpe-webkit-${WPE_API_VERSION}/wpe"
         COMPONENT "Development"
 )
-
-# XXX: Using ${JavaScriptCore_INSTALLED_HEADERS} here expands to nothing.
-GI_INTROSPECT(WPEJavaScriptCore ${WPE_API_VERSION} jsc/jsc.h
-    TARGET WebKit
-    PACKAGE wpe-javascriptcore
-    SYMBOL_PREFIX jsc
-    DEPENDENCIES GObject-2.0
-    OPTIONS
-        -I${JavaScriptCoreGLib_FRAMEWORK_HEADERS_DIR}
-        -I${JavaScriptCoreGLib_DERIVED_SOURCES_DIR}
-    SOURCES
-        ${JAVASCRIPTCORE_DIR}/API/glib/JSCAutocleanups.h
-        ${JAVASCRIPTCORE_DIR}/API/glib/JSCClass.h
-        ${JAVASCRIPTCORE_DIR}/API/glib/JSCContext.h
-        ${JAVASCRIPTCORE_DIR}/API/glib/JSCDefines.h
-        ${JAVASCRIPTCORE_DIR}/API/glib/JSCException.h
-        ${JAVASCRIPTCORE_DIR}/API/glib/JSCOptions.h
-        ${JAVASCRIPTCORE_DIR}/API/glib/JSCValue.h
-        ${JAVASCRIPTCORE_DIR}/API/glib/JSCVirtualMachine.h
-        ${JAVASCRIPTCORE_DIR}/API/glib/JSCWeakValue.h
-        ${JAVASCRIPTCORE_DIR}/API/glib/jsc.h
-        ${JavaScriptCoreGLib_DERIVED_SOURCES_DIR}/jsc/JSCVersion.h
-        ${JAVASCRIPTCORE_DIR}/API/glib
-    NO_IMPLICIT_SOURCES
-)
-GI_DOCGEN(WPEJavaScriptCore "${JAVASCRIPTCORE_DIR}/API/glib/docs/jsc.toml.in")
-
 GI_INTROSPECT(WPEWebKit ${WPE_API_VERSION} wpe/webkit.h
     TARGET WebKit
     PACKAGE wpe-webkit
     IDENTIFIER_PREFIX WebKit
     SYMBOL_PREFIX webkit
     DEPENDENCIES
-        WPEJavaScriptCore
         Soup-${SOUP_API_VERSION}:libsoup-${SOUP_API_VERSION}
     OPTIONS
-        -I${JavaScriptCoreGLib_FRAMEWORK_HEADERS_DIR}
-        -I${JavaScriptCoreGLib_DERIVED_SOURCES_DIR}
     SOURCES
         ${WPE_API_INSTALLED_HEADERS}
         Shared/API/glib
@@ -574,11 +514,8 @@ GI_INTROSPECT(WPEWebExtension ${WPE_API_VERSION} wpe/webkit-web-extension.h
     IDENTIFIER_PREFIX WebKit
     SYMBOL_PREFIX webkit
     DEPENDENCIES
-        WPEJavaScriptCore
         Soup-${SOUP_API_VERSION}:libsoup-${SOUP_API_VERSION}
     OPTIONS
-        -I${JavaScriptCoreGLib_FRAMEWORK_HEADERS_DIR}
-        -I${JavaScriptCoreGLib_DERIVED_SOURCES_DIR}
     SOURCES
         ${WPE_WEB_EXTENSION_API_INSTALLED_HEADERS}
         ${DERIVED_SOURCES_WPE_API_DIR}/WebKitContextMenu.h

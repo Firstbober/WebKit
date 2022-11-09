@@ -1729,28 +1729,6 @@ DOMJITAbstractHeapRepository.h : $(WebCore)/domjit/generate-abstract-heap.rb $(W
 
 # --------
 
-# XMLViewer CSS
-
-all : XMLViewerCSS.h
-
-XMLViewerCSS.h : $(WebCore)/xml/XMLViewer.css
-	$(PYTHON) $(JavaScriptCore_SCRIPTS_DIR)/cssmin.py < "$(WebCore)/xml/XMLViewer.css" > XMLViewer.min.css
-	$(PERL) $(JavaScriptCore_SCRIPTS_DIR)/xxd.pl XMLViewer_css XMLViewer.min.css XMLViewerCSS.h
-	$(DELETE) XMLViewer.min.css
-
-# --------
-
-# XMLViewer JS
-
-all : XMLViewerJS.h
-
-XMLViewerJS.h : $(WebCore)/xml/XMLViewer.js
-	$(PYTHON) $(JavaScriptCore_SCRIPTS_DIR)/jsmin.py < "$(WebCore)/xml/XMLViewer.js" > XMLViewer.min.js
-	$(PERL) $(JavaScriptCore_SCRIPTS_DIR)/xxd.pl XMLViewer_js XMLViewer.min.js XMLViewerJS.h
-	$(DELETE) XMLViewer.min.js
-
-# --------
-
 # HTML entity names
 
 HTMLEntityTable.cpp : $(WebCore)/html/parser/HTMLEntityNames.in $(WebCore)/html/parser/create-html-entity-table
@@ -1974,10 +1952,6 @@ USER_AGENT_SCRIPTS_FILES = \
 USER_AGENT_SCRIPTS_FILES_PATTERNS = $(subst .,%,$(USER_AGENT_SCRIPTS_FILES))
 
 all : $(USER_AGENT_SCRIPTS_FILES)
-
-$(USER_AGENT_SCRIPTS_FILES_PATTERNS) : $(JavaScriptCore_SCRIPTS_DIR)/make-js-file-arrays.py $(USER_AGENT_SCRIPTS)
-	$(PYTHON) $(JavaScriptCore_SCRIPTS_DIR)/make-js-file-arrays.py -n WebCore --fail-if-non-ascii $(USER_AGENT_SCRIPTS_FILES) $(USER_AGENT_SCRIPTS)
-
 # --------
 
 # plug-ins resources
@@ -2361,22 +2335,6 @@ WebCore_BUILTINS_SOURCES = \
     $(WebCore)/bindings/js/JSDOMBindingInternals.js \
     $(WebCore)/inspector/CommandLineAPIModuleSource.js \
 #
-
-BUILTINS_GENERATOR_SCRIPTS = \
-    $(JavaScriptCore_SCRIPTS_DIR)/wkbuiltins.py \
-    $(JavaScriptCore_SCRIPTS_DIR)/builtins_generator.py \
-    $(JavaScriptCore_SCRIPTS_DIR)/builtins_model.py \
-    $(JavaScriptCore_SCRIPTS_DIR)/builtins_templates.py \
-    $(JavaScriptCore_SCRIPTS_DIR)/builtins_generate_combined_header.py \
-    $(JavaScriptCore_SCRIPTS_DIR)/builtins_generate_combined_implementation.py \
-    $(JavaScriptCore_SCRIPTS_DIR)/builtins_generate_separate_header.py \
-    $(JavaScriptCore_SCRIPTS_DIR)/builtins_generate_separate_implementation.py \
-    $(JavaScriptCore_SCRIPTS_DIR)/builtins_generate_internals_wrapper_header.py \
-    $(JavaScriptCore_SCRIPTS_DIR)/builtins_generate_internals_wrapper_implementation.py \
-    $(JavaScriptCore_SCRIPTS_DIR)/builtins_generate_wrapper_header.py \
-    $(JavaScriptCore_SCRIPTS_DIR)/builtins_generate_wrapper_implementation.py \
-    $(JavaScriptCore_SCRIPTS_DIR)/generate-js-builtins.py \
-    $(JavaScriptCore_SCRIPTS_DIR)/lazywriter.py \
 #
 
 WebCore_BUILTINS_WRAPPERS = $(addsuffix Builtins.cpp, $(notdir $(basename $(WebCore_BUILTINS_SOURCES))))
@@ -2391,20 +2349,8 @@ WebCore_BUILTINS_WRAPPERS_PATTERNS = $(subst .,%,$(WebCore_BUILTINS_WRAPPERS))
 # Adding/removing scripts should trigger regeneration, but changing which builtins are
 # generated should not affect other builtins when not passing '--combined' to the generator.
 
-WebCore_BUILTINS_SOURCES_LIST : $(JavaScriptCore_SCRIPTS_DIR)/UpdateContents.py $(WebCore)/DerivedSources.make
-	$(PYTHON) $(JavaScriptCore_SCRIPTS_DIR)/UpdateContents.py '$(WebCore_BUILTINS_SOURCES)' $@
-
-WebCore_BUILTINS_DEPENDENCIES_LIST : $(JavaScriptCore_SCRIPTS_DIR)/UpdateContents.py $(WebCore)/DerivedSources.make
-	$(PYTHON) $(JavaScriptCore_SCRIPTS_DIR)/UpdateContents.py '$(BUILTINS_GENERATOR_SCRIPTS)' $@
-
-$(WebCore_BUILTINS_WRAPPERS_PATTERNS) : $(WebCore_BUILTINS_SOURCES) WebCore_BUILTINS_SOURCES_LIST $(BUILTINS_GENERATOR_SCRIPTS) WebCore_BUILTINS_DEPENDENCIES_LIST
-	$(PYTHON) $(JavaScriptCore_SCRIPTS_DIR)/generate-js-builtins.py --wrappers-only --output-directory . --framework WebCore $(WebCore_BUILTINS_SOURCES)
-
 # See comments for IDL_PATHS for a description of what this is for.
 vpath %.js $(sort $(foreach f,$(WebCore_BUILTINS_SOURCES),$(realpath $(dir $(f)))))
-
-%Builtins.h: %.js $(BUILTINS_GENERATOR_SCRIPTS) WebCore_BUILTINS_DEPENDENCIES_LIST
-	$(PYTHON) $(JavaScriptCore_SCRIPTS_DIR)/generate-js-builtins.py --output-directory . --framework WebCore $<
 
 all : $(notdir $(WebCore_BUILTINS_SOURCES:%.js=%Builtins.h)) $(WebCore_BUILTINS_WRAPPERS)
 

@@ -406,8 +406,6 @@ AUTOMATION_PROTOCOL_INPUT_FILES = \
 #
 
 AUTOMATION_PROTOCOL_OUTPUT_FILES = \
-    AutomationBackendDispatchers.h \
-    AutomationBackendDispatchers.cpp \
     AutomationFrontendDispatchers.h \
     AutomationFrontendDispatchers.cpp \
     AutomationProtocolObjects.h \
